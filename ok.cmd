@@ -1,10 +1,16 @@
 pushd "C:\Users\Jesse\Programs\skeletonKey\GitHub\REPODATS"
+git init
+cd ..
+git -C REPODATS init
+cd REPODATS
 git config --global --add safe.directory "C:\Users\Jesse\Programs\skeletonKey\GitHub\REPODATS"
 git config --local user.namd oldtools
 git config --local user.email jesseklein1977@gmail.com
 git add .
 git remote add REPODATS https://github.com/oldtools/REPODATS
+gh repo create REPODATS --public --source="C:\Users\Jesse\Programs\skeletonKey\GitHub\REPODATS"
 git commit -m "update"
+git push -f --all 
 gh release create ARCHIVE -t "ARCHIVE" -n "" "C:\Users\Jesse\Programs\skeletonKey\GitHub\skeletonkey.deploy\REPODATS\Archive.7z"
 pause
 gh release create ARCHIVE_FULLSETS -t "ARCHIVE_FULLSETS" -n "" "C:\Users\Jesse\Programs\skeletonKey\GitHub\skeletonkey.deploy\REPODATS\archive_fullsets.7z"
